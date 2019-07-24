@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100內的質樹</title>
+</head>
+
+<body>
+    <table border="1" width="100%">
+        <script>
+            let ROW = 10 //有幾欄
+            let START = 1; //從幾開始乘
+            let COL = 10 //一欄有幾格
+                // 判斷是否為值數
+            function check(num) {
+                let isPrim = true;
+                //小於3必定是值數
+                if (num < 4) {
+                    return isPrim;
+                }
+                //大於3，
+                else {
+                    for (let i = 2; i < num; i++) {
+                        if (num % i == 0) {
+                            return isPrim = false;
+                            break;
+                        }
+                    }
+                    return isPrim;
+                }
+            }
+            for (one = 0; one < ROW; one++) {
+                document.write("<tr>");
+                for (two = 0; two < COL; two++) {
+                    //算出格子中的數字
+                    let num = ((one * COL) + two + START);
+                    let resule = check(num);
+                    document.write("<td bgcolor='" + (resule ? "yellow" : "Pink") + "'>");
+                    if (resule) {
+                        document.write(num + ":" + "是值數");
+                    } else {
+                        document.write(num + ":" + "不是值數");
+                    }
+
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 身分證字號產生器</title>
+    <script src="function.js"></script>
+</head>
+
+<body>
+    <script>
+        function checkID() {
+            var msg = document.getElementById("wrong");
+            var id = document.getElementById("ID").value;
+            msg.innerHTML = checkTWID(id) ? "" :
+                "別鬧了";
+        }
+    </script>
+
+    <form action="">
+        身分證字號 :<input type="text" size="60" id="ID" onblur="checkID()"><br>
+        <span id="wrong"></span><br> 性別:
+        <select name="sex" id="sex">
+                <option value="No">請選擇</option>
+                <option value="1">男生</option>
+                <option value="2">女生</option>
+        </select>
+        <select name="area" id="area">
+            <option value="No">請選擇</option>
+            <option value="C">基隆市</option>
+            <option value="A">台北市</option>
+            <option value="F">新北市</option>
+            <option value="H">桃園市</option>
+            <option value="O">新竹市</option>
+            <option value="J">新竹縣</option>
+            <option value="K">苗栗縣</option>
+            <option value="B">台中市</option>
+            <option value="N">彰化縣</option>
+            <option value="M">南投縣</option>
+            <option value="P">雲林縣</option>
+            <option value="I">嘉義市</option>
+            <option value="Q">嘉義縣</option>
+            <option value="D">台南市</option>
+            <option value="E">高雄市</option>
+            <option value="T">屏東縣</option>
+            <option value="V">台東縣</option>
+            <option value="U">花蓮縣</option>
+            <option value="G">宜蘭縣</option>
+            <option value="X">澎湖縣</option>
+            <option value="W">金門縣</option>
+            <option value="Z">連江縣</option>
+        </select>
+        <input type="button" value="產生身分證" onclick=creatID()>
+        <!-- <input type="button" value="驗證身分證" onclick=checkTWID()> -->
+    </form>
+</body>
+
+</html>
